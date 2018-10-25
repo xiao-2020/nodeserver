@@ -1,0 +1,27 @@
+{
+  "name": "node_server",
+  "version": "1.0.0",
+  "description": "test node ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiao-2020/nodeserver.git"
+  },
+  "keywords": [
+    "node",
+    "server",
+    "demo"
+  ],
+  "author": "Liu xiao",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiao-2020/nodeserver/issues"
+  },
+  "homepage": "https://github.com/xiao-2020/nodeserver#readme",
+  "dependencies": {
+    "mysql": "^2.16.0"
+  }
+}

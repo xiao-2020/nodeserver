@@ -1,4 +1,4 @@
 # nodeserver
-server is created by node    --demo 
 
-利用node 构建一个web服务器
+利用原声 node 构建一个web服务器
+
