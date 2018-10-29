@@ -3,7 +3,7 @@ const middleWare = require('./middleWare')
 exports = module.exports
 
 let app = http.createServer(function(req, res) {
-  middleWare(req, res, app)
+  middleWare.middleWare(req, res, app)
 })
 
 app.listen(3566)

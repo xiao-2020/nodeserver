@@ -1,6 +1,6 @@
 
 middleWare = function (req, res, context) {
-  res.end({name: 'liuxiao'})
+  res.end(JSON.stringify({name: 'liuxiao'}))
 }
 
 exports.middleWare = middleWare
