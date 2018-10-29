@@ -8,7 +8,7 @@ let app = http.createServer(function(req, res) {
 
 app.listen(3566)
 
-console.log('Server running at http://127.0.0.1:3566')
+console.log('Server is running at http://127.0.0.1:3566')
 
 
 exports.app = app

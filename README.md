@@ -1,4 +1,4 @@
 # nodeserver
 
-利用原声 node 构建一个web服务器
+利用原生 nodejs 构建一个web服务器
 
