@@ -2,6 +2,13 @@ var exec = require('child_process').exec
 var querystring = require("querystring");
 var fs = require('fs')
 var formidable = require("formidable");
+var mysql = require('mysql')
+var connection = mysql.createConnection({
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
+  database : 'nodejs'
+});
 var handler = {
   '/'(res) {
     console.log('/')
@@ -42,9 +49,17 @@ var handler = {
       postData += postChunkData 
     })
     req.addListener('end', function() {
-      res.writeHead(200, {"Content-Type": "text/plain"});
-      res.write(querystring.parse(postData).text);
-      res.end();
+      // ! 链接数据库 mysql
+      connection.connect()
+      var addSql = 'INSERT INTO user(userName, nickName, submission_date, password) VALUES(?, ?, ?, ?)'
+      var  addSqlParams = ['张嘉琛', 'JackChen', new Date().toLocaleDateString().replace(/\//g, '-'),Math.ceil(Math.random()* 10000000)];
+      connection.query(addSql, addSqlParams, function (error, result, fields) {
+        if (error) throw error;
+        console.log('The solution is: ', result, fields);
+        res.writeHead(200, {"Content-Type": "text/plain"});
+        res.write(JSON.stringify(result));
+        res.end();
+      });
     })
   },
   '/file'(res, req) {
